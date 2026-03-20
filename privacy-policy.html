@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Privacy Policy — Bookmark Manager Agent</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background: #f8fafc;
+      color: #1e293b;
+      line-height: 1.7;
+      padding: 2rem 1rem;
+    }
+
+    .container {
+      max-width: 780px;
+      margin: 0 auto;
+      background: #ffffff;
+      border: 1px solid #e2e8f0;
+      border-radius: 16px;
+      padding: 3rem 3.5rem;
+    }
+
+    .badge {
+      display: inline-block;
+      background: #6366f1;
+      color: #fff;
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 0.25rem 0.75rem;
+      border-radius: 999px;
+      margin-bottom: 1rem;
+    }
+
+    h1 {
+      font-size: 2rem;
+      font-weight: 800;
+      color: #0f172a;
+      margin-bottom: 0.4rem;
+    }
+
+    .meta {
+      font-size: 0.85rem;
+      color: #64748b;
+      margin-bottom: 2.5rem;
+      padding-bottom: 2rem;
+      border-bottom: 1px solid #e2e8f0;
+    }
+
+    h2 {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: #0f172a;
+      margin-top: 2.2rem;
+      margin-bottom: 0.6rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    h2::before {
+      content: "";
+      display: inline-block;
+      width: 4px;
+      height: 1.1em;
+      background: #6366f1;
+      border-radius: 4px;
+      flex-shrink: 0;
+    }
+
+    p { margin-bottom: 0.8rem; color: #334155; }
+
+    ul {
+      margin: 0.5rem 0 0.8rem 1.2rem;
+      color: #334155;
+    }
+
+    ul li { margin-bottom: 0.35rem; }
+
+    .highlight-box {
+      background: #f0fdf4;
+      border: 1px solid #bbf7d0;
+      border-radius: 10px;
+      padding: 1rem 1.25rem;
+      margin: 1.5rem 0;
+      color: #15803d;
+      font-size: 0.9rem;
+    }
+
+    .highlight-box strong { color: #166534; }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 0.8rem 0 1rem;
+      font-size: 0.875rem;
+    }
+
+    th {
+      background: #f1f5f9;
+      color: #475569;
+      font-weight: 600;
+      text-align: left;
+      padding: 0.6rem 0.9rem;
+      border: 1px solid #e2e8f0;
+    }
+
+    td {
+      padding: 0.55rem 0.9rem;
+      border: 1px solid #e2e8f0;
+      color: #334155;
+      vertical-align: top;
+    }
+
+    tr:nth-child(even) td { background: #f8fafc; }
+
+    a { color: #6366f1; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    footer {
+      margin-top: 3rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid #e2e8f0;
+      font-size: 0.8rem;
+      color: #94a3b8;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+
+    <div class="badge">Chrome Extension</div>
+    <h1>Privacy Policy</h1>
+    <p class="meta">
+      Product: <strong>Bookmark Manager Agent</strong> &nbsp;·&nbsp;
+      Last updated: <strong>March 20, 2026</strong>
+    </p>
+
+    <div class="highlight-box">
+      <strong>Short version:</strong> Bookmark Manager Agent stores all your data locally on your device. We do not operate any servers, collect any personal information, or share your data with third parties. API calls go directly from your browser to your chosen AI provider.
+    </div>
+
+    <!-- 1 -->
+    <h2>1. Information We Do Not Collect</h2>
+    <p>The developer of Bookmark Manager Agent does <strong>not</strong> collect, receive, or store any data from your use of this extension. There are no backend servers, analytics pipelines, telemetry, or crash-reporting systems.</p>
+
+    <!-- 2 -->
+    <h2>2. Data Stored Locally on Your Device</h2>
+    <p>All extension data is stored exclusively on your device using Chrome's built-in storage APIs:</p>
+    <ul>
+      <li><strong>Bookmarks &amp; collections</strong> — saved in IndexedDB (via Dexie)</li>
+      <li><strong>Browsing sessions</strong> — stored in IndexedDB, used to restore sessions</li>
+      <li><strong>Settings &amp; preferences</strong> — saved in <code>chrome.storage.local</code></li>
+      <li><strong>AI provider API key</strong> — saved in <code>chrome.storage.local</code>, never transmitted to us</li>
+      <li><strong>Organizer rules</strong> — stored in <code>chrome.storage.local</code></li>
+    </ul>
+    <p>This data never leaves your device except when you explicitly trigger an AI feature (see Section 3).</p>
+
+    <!-- 3 -->
+    <h2>3. AI Provider Requests</h2>
+    <p>When you use AI-powered features (organize, semantic search, suggest folders), the extension sends requests <strong>directly from your browser</strong> to your chosen AI provider. No data passes through any server operated by us.</p>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Provider</th>
+          <th>Endpoint called</th>
+          <th>Data sent</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Anthropic (Claude)</td>
+          <td>api.anthropic.com</td>
+          <td rowspan="4">Bookmark titles, URLs, and tags only. Your API key is sent as a request header. No personal identity data is included.</td>
+        </tr>
+        <tr>
+          <td>OpenAI</td>
+          <td>api.openai.com</td>
+        </tr>
+        <tr>
+          <td>Google Gemini</td>
+          <td>generativelanguage.googleapis.com</td>
+        </tr>
+        <tr>
+          <td>Ollama (Local)</td>
+          <td>localhost:11434</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p>Each provider's own privacy policy governs how they handle data sent to their APIs. We recommend reviewing the policy of whichever provider you choose to use.</p>
+
+    <!-- 4 -->
+    <h2>4. Permissions Explained</h2>
+    <p>The extension requests only the permissions strictly necessary for its features:</p>
+    <table>
+      <thead>
+        <tr><th>Permission</th><th>Why it's needed</th></tr>
+      </thead>
+      <tbody>
+        <tr><td><code>bookmarks</code></td><td>Read and write your Chrome bookmarks for organization and management</td></tr>
+        <tr><td><code>tabs</code></td><td>Open the dashboard, capture tab screenshots for previews, and bookmark the active tab</td></tr>
+        <tr><td><code>storage</code></td><td>Save settings, API keys, and organizer rules locally</td></tr>
+        <tr><td><code>alarms</code></td><td>Schedule periodic dead-link checks and bookmark sync in the background</td></tr>
+        <tr><td><code>contextMenus</code></td><td>Add a right-click menu item for quick bookmark actions</td></tr>
+        <tr><td><code>notifications</code></td><td>Alert you when dead links are found or reminders are due</td></tr>
+        <tr><td><code>activeTab</code></td><td>Access the current page's URL and title when you click "Bookmark this tab"</td></tr>
+      </tbody>
+    </table>
+
+    <!-- 5 -->
+    <h2>5. Tab Screenshots</h2>
+    <p>The extension can capture a screenshot of your visible tab when you manually save a bookmark with thumbnail preview enabled. Screenshots are:</p>
+    <ul>
+      <li>Captured only on explicit user action</li>
+      <li>Stored locally in IndexedDB on your device</li>
+      <li>Never uploaded to any server</li>
+    </ul>
+
+    <!-- 6 -->
+    <h2>6. Dead Link Checking</h2>
+    <p>The daily dead-link check makes HTTP HEAD requests to URLs in your bookmark list to verify they are still reachable. These requests are made directly from your browser. No bookmark data is sent to us during this process.</p>
+
+    <!-- 7 -->
+    <h2>7. Children's Privacy</h2>
+    <p>This extension is not directed at children under the age of 13, and we do not knowingly collect any information from children.</p>
+
+    <!-- 8 -->
+    <h2>8. Changes to This Policy</h2>
+    <p>We may update this privacy policy from time to time. The "Last updated" date at the top of this page will reflect any changes. Continued use of the extension after an update constitutes acceptance of the revised policy.</p>
+
+    <!-- 9 -->
+    <h2>9. Contact</h2>
+    <p>If you have questions about this privacy policy or the extension's data practices, please open an issue on the GitHub repository or contact us via the Chrome Web Store support channel.</p>
+
+    <footer>
+      &copy; 2026 Bookmark Manager Agent &nbsp;·&nbsp; All rights reserved
+    </footer>
+
+  </div>
+</body>
+</html>
